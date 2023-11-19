@@ -20,7 +20,7 @@ class Lowongan extends Model
     // public $timestamps = false;
 
     protected $fillable = [
-        'id_perusahaan', 'tanggal_tutup'
+        'id_perusahaan', 'tanggal_tutup', 'gambar'
     ];
 
     /**

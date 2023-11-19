@@ -17,7 +17,8 @@ class LowonganResource extends JsonResource
         return [
             'id_lowongan' => $this->id,
             'tanggal_tutup' => $this->tanggal_tutup,
-            'alamat_perusahaan' => $this->perusahaan->alamat_perusahaan
+            'alamat_perusahaan' => $this->perusahaan->alamat_perusahaan,
+            'gambar' => $this->gambar
         ];
     }
 }

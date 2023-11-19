@@ -40,13 +40,21 @@ class LowonganController extends Controller
 
         $dataLowongan->id_perusahaan = $request->id_perusahaan;
         $dataLowongan->tanggal_tutup = $request->tanggal_tutup;
+        $dataLowongan->gambar = $request->gambar;
         $dataLowongan->save();
 
         return response()->json(['messages' => 'Berhasil mengedit data Lowongan']);
     }
 
     public function show($id){
+        $dataLowongan = Lowongan::find($id);
 
+        if($dataLowongan == null){
+            return response()->json(['messages' => 'Data Lowongan tersebut tidak ada']);
+        }
+        else{
+            
+        }
     }
 
     public function destroy($id){

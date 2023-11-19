@@ -23,7 +23,8 @@ class LowonganRequest extends FormRequest
     {
         return [
             'id_perusahaan' => 'required',
-            'tanggal_tutup' => 'required'
+            'tanggal_tutup' => 'required',
+            'gambar' => 'required',
         ];
     }
 
@@ -39,6 +40,7 @@ class LowonganRequest extends FormRequest
         return [
             'id_perusahaan' => 'Perusahaan',
             'tanggal_tutup' => 'Tanggal Tutup',
+            'gambar' => 'Gambar',
         ];
     }
 }

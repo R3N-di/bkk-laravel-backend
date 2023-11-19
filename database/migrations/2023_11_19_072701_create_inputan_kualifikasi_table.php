@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('inputan_kualifikasi', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('id_lamaran');
-            $table->foreign('id_lamaran')->referances('id')->on('lamaran');
+            $table->foreign('id_lamaran')->references('id')->on('lamaran');
             $table->uuid('id_syarat_kualifikasi');
             $table->foreign('id_syarat_kualifikasi')->references('id')->on('syarat_kualifikasi');
             $table->text('isi_inputan');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
