@@ -2,9 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Lamaran;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Alumni extends Model
 {
@@ -26,5 +28,13 @@ class Alumni extends Model
         return $this->belongsTo(User::class, 'id_users', 'id');
     }
 
-
+    /**
+     * Get all of the lamaran for the Alumni
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function lamaran(): HasMany
+    {
+        return $this->hasMany(Lamaran::class);
+    }
 }

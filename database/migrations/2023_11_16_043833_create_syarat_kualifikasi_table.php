@@ -16,7 +16,9 @@ return new class extends Migration
             $table->uuid('id_lowongan');
             $table->foreign('id_lowongan')->references('id')->on('lowongan');
             $table->string('field_kualifikasi', 255);
-            $table->text('isi_kualifikasi');
+            $table->enum('tipe_data', ['int', 'string', 'file', 'text'])->nullable();
+            $table->text('isi_kualifikasi')->nullable();
+            $table->boolean('is_nullable')->nullable();
             // $table->timestamps();
         });
     }
