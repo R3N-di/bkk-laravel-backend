@@ -24,6 +24,7 @@ class LowonganRequest extends FormRequest
         return [
             'id_perusahaan' => 'required',
             'tanggal_tutup' => 'required',
+            // 'gambar' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'gambar' => 'required',
         ];
     }
