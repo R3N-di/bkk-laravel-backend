@@ -17,7 +17,8 @@ return new class extends Migration
             $table->text('logo_perusahaan');
             $table->text('alamat_perusahaan');
             $table->text('kontak_perusahaan');
-            // $table->timestamps();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 

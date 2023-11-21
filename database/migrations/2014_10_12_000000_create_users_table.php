@@ -15,12 +15,10 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('role', ['super-admin', 'admin', 'alumni']);
             $table->enum('jk', ['Laki-laki', 'Perempuan']);
             $table->date('tgl_lahir')->nullable();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
