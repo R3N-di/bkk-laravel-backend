@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('jk', ['Laki-laki', 'Perempuan']);
             $table->date('tgl_lahir')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
