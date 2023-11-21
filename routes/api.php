@@ -22,4 +22,6 @@ use Illuminate\Support\Facades\Route;
 // Route::post('/login', [AuthController::class,'login']);
 
 require __DIR__.'/lowongan.php';
+require __DIR__.'/lamaran.php';
+require __DIR__.'/syarat_kualifikasi.php';
 // require __DIR__.'/kategori_prestasi.php';
