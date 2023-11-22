@@ -6,6 +6,7 @@ use Exception;
 use App\Models\Perusahaan;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Resources\PerusahaanResource;
 use App\Http\Requests\PerusahaanStoreRequest;
 
 class PerusahaanController extends Controller
@@ -16,10 +17,13 @@ class PerusahaanController extends Controller
     public function index()
     {
         $perusahaan = Perusahaan::all();
+        // dd($perusahaan);
 
-        return response()->json([
-            'data'=>$perusahaan
-        ], 200);
+        // return response()->json([
+        //     'data'=>$perusahaan
+        // ], 200);
+
+        return PerusahaanResource::collection($perusahaan);
     }
 
     /**
@@ -56,6 +60,7 @@ class PerusahaanController extends Controller
     public function show(string $id)
     {
         $perusahaan=Perusahaan::find($id);
+
         if(!$perusahaan){
             return response()->json(['messege'=>'Perusahaan tidak ditemukan'], 404);
         }
@@ -107,7 +112,9 @@ class PerusahaanController extends Controller
                     'message'=>'Perusahaan Tidak Ditemukan'
                 ],404);
             }
-            $perusahaan->delete();
-            return response()->json(['message'=>'Perusahaan Berhasil dihapus'], 200);
+            else{
+                $perusahaan->delete();
+                return response()->json(['message'=>'Perusahaan Berhasil dihapus'], 200);
+            }
     }
 }
